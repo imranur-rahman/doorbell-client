@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "410217041673",
+    "firebase_url": "https://doorbell-interface-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "doorbell-interface",
+    "storage_bucket": "doorbell-interface.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410217041673:android:9a3db77b363efcf4a38dd8",
+        "android_client_info": {
+          "package_name": "com.atharvakale.facerecognition"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410217041673-j0l3itlv48djobp1pg44nhdg6o85buqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbom_gxa06Pk5yTJDpyXZvdgK9isxwkkc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "410217041673-j0l3itlv48djobp1pg44nhdg6o85buqb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410217041673:android:5664cdff529acd4aa38dd8",
+        "android_client_info": {
+          "package_name": "edu.ncsu.doorbell_interface"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410217041673-j0l3itlv48djobp1pg44nhdg6o85buqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbom_gxa06Pk5yTJDpyXZvdgK9isxwkkc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "410217041673-j0l3itlv48djobp1pg44nhdg6o85buqb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410217041673:android:87b75ca6b65c0871a38dd8",
+        "android_client_info": {
+          "package_name": "edu.ncsu.doorbellclient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410217041673-j0l3itlv48djobp1pg44nhdg6o85buqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbom_gxa06Pk5yTJDpyXZvdgK9isxwkkc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "410217041673-j0l3itlv48djobp1pg44nhdg6o85buqb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
