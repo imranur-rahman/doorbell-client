@@ -3,6 +3,8 @@ package edu.ncsu.doorbellclient;
 public class StringEdge {
     String src, dest;
 
+    public StringEdge() {}
+
     public StringEdge(String src, String dest) {
         this.src = src;
         this.dest = dest;
