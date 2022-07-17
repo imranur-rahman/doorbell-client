@@ -7,7 +7,15 @@ import com.google.gson.Gson;
 
 public class DAOUsersRelation {
     private DatabaseReference databaseReference;
-    public DAOUsersRelation() {
+    private static DAOUsersRelation daoUsersRelation = null;
+
+    public static DAOUsersRelation getDAOUsersRelation() {
+        if (daoUsersRelation == null) {
+            daoUsersRelation = new DAOUsersRelation();
+        }
+        return daoUsersRelation;
+    }
+    private DAOUsersRelation() {
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://doorbell-interface-default-rtdb.asia-southeast1.firebasedatabase.app/");
         databaseReference = db.getReference(UsersRelation.class.getSimpleName());
     }

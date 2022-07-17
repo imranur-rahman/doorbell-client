@@ -79,7 +79,10 @@ public class SecondFragment extends Fragment {
                                                 Toast.LENGTH_LONG); // not working donno why
                                         Log.d(this.getClass().getSimpleName(),
                                                 userInput1.getText().toString() + userInput2.getText().toString()); // working
+
                                         // Need to add logic here to update the firebase database
+                                        DAOUsersRelation daoUsersRelation = DAOUsersRelation.getDAOUsersRelation();
+                                        daoUsersRelation.add(userInput1.getText().toString(), userInput2.getText().toString());
                                     }
                                 })
                         .setNegativeButton("Cancel",
