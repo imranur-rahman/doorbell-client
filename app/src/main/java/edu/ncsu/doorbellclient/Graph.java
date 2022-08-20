@@ -13,26 +13,26 @@ class Edge {
         this.weight = weight;
     }
 }
+// node of adjacency list
+class Node {
+    int value, weight;
+    Node(int value, int weight)  {
+        this.value = value;
+        this.weight = weight;
+    }
+}
+
 // Graph class
 public class Graph {
-    // node of adjacency list
-    static class Node {
-        int value, weight;
-        Node(int value, int weight)  {
-            this.value = value;
-            this.weight = weight;
-        }
-    };
-
     // define adjacency list
 
     List<List<Node>> adj_list = new ArrayList<>();
 
     //Graph Constructor
-    public Graph(List<Edge> edges)
+    public Graph(List<Edge> edges, int graphSize)
     {
         // adjacency list memory allocation
-        for (int i = 0; i < edges.size(); i++)
+        for (int i = 0; i < graphSize; i++)
             adj_list.add(i, new ArrayList<>());
 
         // add edges to the graph
@@ -58,5 +58,11 @@ public class Graph {
             System.out.println();
             src_vertex++;
         }
+    }
+
+    public List<Node> getItem(int position) {
+        if (position < 0 || position >= adj_list.size())
+            return new ArrayList<Node>();
+        return adj_list.get(position);
     }
 }

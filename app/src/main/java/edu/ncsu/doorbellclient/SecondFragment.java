@@ -15,12 +15,18 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import edu.ncsu.doorbellclient.databinding.FragmentSecondBinding;
 
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
+    private RecyclerView recyclerView;
+    private DAOUsersRelation daoUsersRelation;
+    private AdapterUsersRelation adapterUsersRelation;
+    private UsersRelation usersRelation;
 
     @Override
     public View onCreateView(
@@ -35,6 +41,25 @@ public class SecondFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        // initializing our variables
+        recyclerView = binding.recyclerview;
+        recyclerView.setHasFixedSize(true);// donno why
+
+        daoUsersRelation = DAOUsersRelation.getDAOUsersRelation();
+
+        // adding horizontal layout manager for our recycler view.
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+
+        usersRelation = new UsersRelation();
+
+        // adding our empty usersrelation to our recycler view adapter class.
+        adapterUsersRelation = new AdapterUsersRelation(usersRelation, getContext());
+
+        // setting adapter to our recycler view.
+        recyclerView.setAdapter(adapterUsersRelation);
+
+        daoUsersRelation.loadRecyclerViewData(this);
 
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +106,7 @@ public class SecondFragment extends Fragment {
                                                 userInput1.getText().toString() + userInput2.getText().toString()); // working
 
                                         // Need to add logic here to update the firebase database
-                                        DAOUsersRelation daoUsersRelation = DAOUsersRelation.getDAOUsersRelation();
+
                                         daoUsersRelation.add(userInput1.getText().toString(), userInput2.getText().toString());
                                     }
                                 })
@@ -107,4 +132,19 @@ public class SecondFragment extends Fragment {
         binding = null;
     }
 
+    public UsersRelation getUsersRelation() {
+        return usersRelation;
+    }
+
+    public void setUsersRelation(UsersRelation usersRelation) {
+        this.usersRelation = usersRelation;
+    }
+
+    public AdapterUsersRelation getAdapterUsersRelation() {
+        return adapterUsersRelation;
+    }
+
+    public void setAdapterUsersRelation(AdapterUsersRelation adapterUsersRelation) {
+        this.adapterUsersRelation = adapterUsersRelation;
+    }
 }
